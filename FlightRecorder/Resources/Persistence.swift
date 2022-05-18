@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  FlightRecorder
-//
-//  Created by Marcel Kraus on 18.05.22.
-//
-
 import CoreData
 
 struct PersistenceController {

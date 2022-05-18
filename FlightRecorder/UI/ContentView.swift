@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  FlightRecorder
-//
-//  Created by Marcel Kraus on 18.05.22.
-//
-
 import SwiftUI
 import CoreData
 
