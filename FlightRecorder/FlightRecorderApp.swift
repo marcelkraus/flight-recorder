@@ -2,11 +2,11 @@ import SwiftUI
 
 @main
 struct FlightRecorderApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = PersistenceController.sharedInstance
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PilotView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

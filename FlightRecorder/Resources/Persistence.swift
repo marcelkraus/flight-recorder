@@ -1,23 +1,27 @@
 import CoreData
 
 struct PersistenceController {
-    static let shared = PersistenceController()
+    static let defaultPilots = [
+        ("Amelia Mary Earhart", "EAR", false),
+        ("Han Solo", "HAN", true),
+        ("Chesley B. Sullenberger", "SUL", false)
+    ]
 
-    static var preview: PersistenceController = {
+    static let sharedInstance = PersistenceController()
+
+    static var previewInstance: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+
+        Self.defaultPilots.forEach {
+            let pilot = Pilot(context: viewContext)
+            pilot.name = $0.0
+            pilot.abbreviation = $0.1
+            pilot.isDefault = $0.2
         }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+
+        try? viewContext.save()
+
         return result
     }()
 
@@ -25,9 +29,11 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "FlightRecorder")
+
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
