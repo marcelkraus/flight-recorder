@@ -6,7 +6,7 @@ struct FlightRecorderApp: App {
 
     var body: some Scene {
         WindowGroup {
-            PilotView()
+            OnboardingContainerView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

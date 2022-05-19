@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		DF2D74B8283546CB007F441D /* FlightRecorder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF2D74B6283546CB007F441D /* FlightRecorder.xcdatamodeld */; };
 		DF5DC66F2835436E00ABD8DB /* FlightRecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC66E2835436E00ABD8DB /* FlightRecorderApp.swift */; };
-		DF5DC6712835436E00ABD8DB /* PilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC6702835436E00ABD8DB /* PilotView.swift */; };
+		DF5DC6712835436E00ABD8DB /* PilotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC6702835436E00ABD8DB /* PilotsView.swift */; };
 		DF5DC6732835437000ABD8DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5DC6722835437000ABD8DB /* Assets.xcassets */; };
 		DF5DC6762835437000ABD8DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5DC6752835437000ABD8DB /* Preview Assets.xcassets */; };
 		DF5DC6782835437000ABD8DB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC6772835437000ABD8DB /* Persistence.swift */; };
 		DF5DC6852835437000ABD8DB /* FlightRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC6842835437000ABD8DB /* FlightRecorderTests.swift */; };
+		DFFE038D28362BB500AA35F8 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE038C28362BB500AA35F8 /* IntroView.swift */; };
+		DFFE03942836376E00AA35F8 /* PilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE03932836376E00AA35F8 /* PilotView.swift */; };
+		DFFE039628363AB100AA35F8 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE039528363AB100AA35F8 /* OnboardingContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +33,15 @@
 		DF2D74B7283546CB007F441D /* FlightLogbook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlightLogbook.xcdatamodel; sourceTree = "<group>"; };
 		DF5DC66B2835436E00ABD8DB /* FlightRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5DC66E2835436E00ABD8DB /* FlightRecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRecorderApp.swift; sourceTree = "<group>"; };
-		DF5DC6702835436E00ABD8DB /* PilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotView.swift; sourceTree = "<group>"; };
+		DF5DC6702835436E00ABD8DB /* PilotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotsView.swift; sourceTree = "<group>"; };
 		DF5DC6722835437000ABD8DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF5DC6752835437000ABD8DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF5DC6772835437000ABD8DB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DF5DC6802835437000ABD8DB /* FlightRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5DC6842835437000ABD8DB /* FlightRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRecorderTests.swift; sourceTree = "<group>"; };
+		DFFE038C28362BB500AA35F8 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		DFFE03932836376E00AA35F8 /* PilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotView.swift; sourceTree = "<group>"; };
+		DFFE039528363AB100AA35F8 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +76,8 @@
 		DF2D74BA2835470F007F441D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DF5DC6702835436E00ABD8DB /* PilotView.swift */,
+				DFFE03922836355700AA35F8 /* Onboarding */,
+				DF5DC6702835436E00ABD8DB /* PilotsView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -117,6 +124,16 @@
 				DF5DC6842835437000ABD8DB /* FlightRecorderTests.swift */,
 			);
 			path = FlightRecorderTests;
+			sourceTree = "<group>";
+		};
+		DFFE03922836355700AA35F8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DFFE038C28362BB500AA35F8 /* IntroView.swift */,
+				DFFE039528363AB100AA35F8 /* OnboardingContainerView.swift */,
+				DFFE03932836376E00AA35F8 /* PilotView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +237,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5DC6782835437000ABD8DB /* Persistence.swift in Sources */,
-				DF5DC6712835436E00ABD8DB /* PilotView.swift in Sources */,
+				DF5DC6712835436E00ABD8DB /* PilotsView.swift in Sources */,
+				DFFE03942836376E00AA35F8 /* PilotView.swift in Sources */,
+				DFFE039628363AB100AA35F8 /* OnboardingContainerView.swift in Sources */,
 				DF5DC66F2835436E00ABD8DB /* FlightRecorderApp.swift in Sources */,
+				DFFE038D28362BB500AA35F8 /* IntroView.swift in Sources */,
 				DF2D74B8283546CB007F441D /* FlightRecorder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
