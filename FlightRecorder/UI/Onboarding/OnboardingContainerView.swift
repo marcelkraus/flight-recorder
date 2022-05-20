@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct OnboardingContainerView: View {
+    @State var state = OnboardingState.initial
+
     var body: some View {
         NavigationView {
-            IntroView()
+            IntroView(state: $state)
         }
         .navigationViewStyle(.stack)
     }
