@@ -25,6 +25,12 @@ enum OnboardingState: Int {
         }
     }
 
+    mutating func updateTo(atLeast state: OnboardingState) {
+        if self < state {
+            self = state
+        }
+    }
+
     func isAtLeast(_ state: OnboardingState) -> Bool {
         switch self {
         case .initial:

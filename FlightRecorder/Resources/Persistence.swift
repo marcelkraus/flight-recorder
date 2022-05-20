@@ -7,7 +7,8 @@ struct PersistenceController {
         ("Chesley B. Sullenberger", "SUL", false)
     ]
 
-    static let sharedInstance = PersistenceController()
+    // TODO: Remove `inMemory` flag after developing the onboarding flow.
+    static let sharedInstance = PersistenceController(inMemory: true)
 
     static var previewInstance: PersistenceController = {
         let result = PersistenceController(inMemory: true)
@@ -15,6 +16,7 @@ struct PersistenceController {
 
         Self.defaultPilots.forEach {
             let pilot = Pilot(context: viewContext)
+            pilot.id = UUID()
             pilot.name = $0.0
             pilot.abbreviation = $0.1
             pilot.isDefault = $0.2

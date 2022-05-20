@@ -3,10 +3,11 @@
     <entity name="Pilot" representedClassName="Pilot" syncable="YES" codeGenerationType="class">
         <attribute name="abbreviation" optional="YES" attributeType="String" minValueString="0" maxValueString="3"/>
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isDefault" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String" minValueString="0" maxValueString="32"/>
     </entity>
     <elements>
-        <element name="Pilot" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Pilot" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct IntroView: View {
+struct FlightObjectView: View {
     @Binding var state: OnboardingState
 
     var body: some View {
         VStack(alignment: .leading, spacing: 32.0) {
-            Text("Hallo, Flieger!")
+            Text("Was fliegst du?")
                 .font(.title)
-            Text("Dies ist dein persönliches **Flugbuch**.\n\nErfasse alle deine Drohnenflüge in dieser App und sei für alle behördlichen Auflagen bestens gerüstet.\n\nIn den nächsten fünf Schritten werde ich dich durch die Ersteinrichtung der App führen.")
+            Text("Nun ist dein Fluggerät dran. Lege deine erstes an, dieses wird das Standard-Fluggerät deiner Flotte.")
                 .font(.body)
             Spacer()
             VStack(spacing: -4.0) {
@@ -15,10 +15,7 @@ struct IntroView: View {
                 HStack(spacing: 0.0) {
                     Spacer()
                     NavigationLink(destination: {
-                        PilotView(state: $state)
-                            .onAppear {
-                                state.updateTo(atLeast: .intro)
-                            }
+                        FlightObjectView(state: $state)
                     }, label: {
                         Image(systemName: "arrow.forward.circle")
                             .resizable()
@@ -28,18 +25,19 @@ struct IntroView: View {
                             .foregroundColor(Color.accentColor)
                             .background(Color.white)
                     })
+                    .disabled(true)
                     Spacer()
                 }
             }
         }
         .padding()
-        .navigationTitle("Herzlich Willkommen")
+        .navigationTitle("Erstelle dein Fluggerät")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-struct IntroView_Previews: PreviewProvider {
+struct FlightObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroView(state: .constant(.initial))
+        FlightObjectView(state: .constant(.intro))
     }
 }
