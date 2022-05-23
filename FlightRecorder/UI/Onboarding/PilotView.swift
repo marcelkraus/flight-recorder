@@ -55,10 +55,7 @@ struct PilotView: View {
     }
 
     private func add() {
-        let pilot = Pilot(context: viewContext)
-        pilot.id = UUID()
-        pilot.isDefault = true
-        pilot.name = name
+        let _ = Pilot.create(context: viewContext, name: name, isDefault: true)
 
         do {
             try viewContext.save()

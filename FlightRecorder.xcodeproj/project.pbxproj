@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DF2D74B8283546CB007F441D /* FlightRecorder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF2D74B6283546CB007F441D /* FlightRecorder.xcdatamodeld */; };
+		DF475FF3283C3B1700F046A5 /* Pilot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF475FF2283C3B1700F046A5 /* Pilot.swift */; };
+		DF475FF5283C3C9E00F046A5 /* FlyingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF475FF4283C3C9D00F046A5 /* FlyingObject.swift */; };
 		DF5DC66F2835436E00ABD8DB /* FlightRecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC66E2835436E00ABD8DB /* FlightRecorderApp.swift */; };
 		DF5DC6712835436E00ABD8DB /* PilotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC6702835436E00ABD8DB /* PilotsView.swift */; };
 		DF5DC6732835437000ABD8DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5DC6722835437000ABD8DB /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		DF2D74B7283546CB007F441D /* FlightLogbook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlightLogbook.xcdatamodel; sourceTree = "<group>"; };
+		DF475FF2283C3B1700F046A5 /* Pilot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pilot.swift; sourceTree = "<group>"; };
+		DF475FF4283C3C9D00F046A5 /* FlyingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingObject.swift; sourceTree = "<group>"; };
 		DF5DC66B2835436E00ABD8DB /* FlightRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5DC66E2835436E00ABD8DB /* FlightRecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRecorderApp.swift; sourceTree = "<group>"; };
 		DF5DC6702835436E00ABD8DB /* PilotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotsView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		DF475FF1283C3B1000F046A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF475FF4283C3C9D00F046A5 /* FlyingObject.swift */,
+				DF475FF2283C3B1700F046A5 /* Pilot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DF5DC6622835436E00ABD8DB = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 		DF5DC66D2835436E00ABD8DB /* FlightRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				DF475FF1283C3B1000F046A5 /* Model */,
 				DF2D74B9283546F1007F441D /* Resources */,
 				DF2D74BA2835470F007F441D /* UI */,
 				DF5DC66E2835436E00ABD8DB /* FlightRecorderApp.swift */,
@@ -266,6 +280,7 @@
 			files = (
 				DF5DC6782835437000ABD8DB /* Persistence.swift in Sources */,
 				DF5DC6712835436E00ABD8DB /* PilotsView.swift in Sources */,
+				DF475FF3283C3B1700F046A5 /* Pilot.swift in Sources */,
 				DFFB4E6928378EE600038FAE /* OnboardingStateView.swift in Sources */,
 				DFFB4E6D2837931C00038FAE /* OnboardingState.swift in Sources */,
 				DFFE03942836376E00AA35F8 /* PilotView.swift in Sources */,
@@ -274,6 +289,7 @@
 				DF5DC66F2835436E00ABD8DB /* FlightRecorderApp.swift in Sources */,
 				DFFE038D28362BB500AA35F8 /* IntroView.swift in Sources */,
 				DF917FB52837A270003AA319 /* FlyingObjectView.swift in Sources */,
+				DF475FF5283C3C9E00F046A5 /* FlyingObject.swift in Sources */,
 				DF2D74B8283546CB007F441D /* FlightRecorder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -55,9 +55,7 @@ struct FlyingObjectView: View {
     }
 
     private func add() {
-        let flyingObject = FlyingObject(context: viewContext)
-        flyingObject.id = UUID()
-        flyingObject.name = name
+        let _ = FlyingObject.create(context: viewContext, name: name)
 
         do {
             try viewContext.save()

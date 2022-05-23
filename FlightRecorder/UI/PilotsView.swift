@@ -39,9 +39,8 @@ struct PilotsView: View {
 
     private func addPilot() {
         withAnimation {
-            let pilot = Pilot(context: viewContext)
-            pilot.name = PersistenceController.defaultPilots.randomElement()!.0
-            pilot.abbreviation = PersistenceController.defaultPilots.randomElement()!.1
+            let pilot = Pilot.create(context: viewContext, name: Pilot.placeholders.randomElement()!.name)
+            pilot.abbreviation = Pilot.placeholders.randomElement()!.abbreviation
 
             try? viewContext.save()
         }

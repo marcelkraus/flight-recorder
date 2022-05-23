@@ -1,12 +1,6 @@
 import CoreData
 
 struct PersistenceController {
-    static let defaultPilots = [
-        ("Amelia Mary Earhart", "EAR", false),
-        ("Han Solo", "HAN", true),
-        ("Chesley B. Sullenberger", "SUL", false)
-    ]
-
     // TODO: Remove `inMemory` flag after developing the onboarding flow.
     static let sharedInstance = PersistenceController(inMemory: true)
 
@@ -14,12 +8,9 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
 
-        Self.defaultPilots.forEach {
-            let pilot = Pilot(context: viewContext)
-            pilot.id = UUID()
-            pilot.name = $0.0
-            pilot.abbreviation = $0.1
-            pilot.isDefault = $0.2
+        Pilot.placeholders.forEach {
+            let pilot = Pilot.create(context: viewContext, name: $0.name, isDefault: $0.isDefault)
+            pilot.abbreviation = $0.abbreviation
         }
 
         try? viewContext.save()
