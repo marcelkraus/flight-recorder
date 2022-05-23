@@ -14,7 +14,8 @@
 		DF5DC6762835437000ABD8DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5DC6752835437000ABD8DB /* Preview Assets.xcassets */; };
 		DF5DC6782835437000ABD8DB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC6772835437000ABD8DB /* Persistence.swift */; };
 		DF5DC6852835437000ABD8DB /* FlightRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DC6842835437000ABD8DB /* FlightRecorderTests.swift */; };
-		DF917FB52837A270003AA319 /* FlightObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF917FB42837A270003AA319 /* FlightObjectView.swift */; };
+		DF917FB52837A270003AA319 /* FlyingObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF917FB42837A270003AA319 /* FlyingObjectView.swift */; };
+		DFB01688283AE5CF0002DB49 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB01687283AE5CF0002DB49 /* LocationView.swift */; };
 		DFFB4E6928378EE600038FAE /* OnboardingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFB4E6828378EE600038FAE /* OnboardingStateView.swift */; };
 		DFFB4E6D2837931C00038FAE /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFB4E6C2837931C00038FAE /* OnboardingState.swift */; };
 		DFFE038D28362BB500AA35F8 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE038C28362BB500AA35F8 /* IntroView.swift */; };
@@ -42,7 +43,8 @@
 		DF5DC6772835437000ABD8DB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DF5DC6802835437000ABD8DB /* FlightRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5DC6842835437000ABD8DB /* FlightRecorderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRecorderTests.swift; sourceTree = "<group>"; };
-		DF917FB42837A270003AA319 /* FlightObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightObjectView.swift; sourceTree = "<group>"; };
+		DF917FB42837A270003AA319 /* FlyingObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyingObjectView.swift; sourceTree = "<group>"; };
+		DFB01687283AE5CF0002DB49 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		DFFB4E6828378EE600038FAE /* OnboardingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStateView.swift; sourceTree = "<group>"; };
 		DFFB4E6C2837931C00038FAE /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
 		DFFE038C28362BB500AA35F8 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -153,8 +155,9 @@
 			children = (
 				DFFB4E6B2837930700038FAE /* States */,
 				DFFB4E6A28378EF300038FAE /* Views */,
-				DF917FB42837A270003AA319 /* FlightObjectView.swift */,
+				DF917FB42837A270003AA319 /* FlyingObjectView.swift */,
 				DFFE038C28362BB500AA35F8 /* IntroView.swift */,
+				DFB01687283AE5CF0002DB49 /* LocationView.swift */,
 				DFFE039528363AB100AA35F8 /* OnboardingContainerView.swift */,
 				DFFE03932836376E00AA35F8 /* PilotView.swift */,
 			);
@@ -267,9 +270,10 @@
 				DFFB4E6D2837931C00038FAE /* OnboardingState.swift in Sources */,
 				DFFE03942836376E00AA35F8 /* PilotView.swift in Sources */,
 				DFFE039628363AB100AA35F8 /* OnboardingContainerView.swift in Sources */,
+				DFB01688283AE5CF0002DB49 /* LocationView.swift in Sources */,
 				DF5DC66F2835436E00ABD8DB /* FlightRecorderApp.swift in Sources */,
 				DFFE038D28362BB500AA35F8 /* IntroView.swift in Sources */,
-				DF917FB52837A270003AA319 /* FlightObjectView.swift in Sources */,
+				DF917FB52837A270003AA319 /* FlyingObjectView.swift in Sources */,
 				DF2D74B8283546CB007F441D /* FlightRecorder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

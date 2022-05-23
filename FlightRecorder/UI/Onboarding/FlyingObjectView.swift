@@ -1,22 +1,22 @@
 import SwiftUI
 
-struct PilotView: View {
+struct FlyingObjectView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @Binding var state: OnboardingState
 
-    @FetchRequest(sortDescriptors: []) private var pilots: FetchedResults<Pilot>
+    @FetchRequest(sortDescriptors: []) private var flyingObjects: FetchedResults<FlyingObject>
 
     @State private var name: String = ""
 
     var body: some View {
         VStack(alignment: .leading, spacing: 32.0) {
-            Text("Wer bist du?")
+            Text("Was fliegst du?")
                 .font(.title)
-            Text("Lege nun deinen ersten Piloten an. Dieser Pilot wird der Standard-Pilot deiner Fluggeräte.")
+            Text("Als nächstes wähle bitte den Namen deines Fluggerätes. Dieses wird als Standard-Fluggerät verwendet.")
                 .font(.body)
             HStack(alignment: .center, spacing: 16.0) {
-                TextField("Name deines ersten Piloten", text: $name) {
+                TextField("Name deines Fluggerätes", text: $name) {
                     add()
                 }
                 .textFieldStyle(.roundedBorder)
@@ -27,14 +27,14 @@ struct PilotView: View {
                 }
                 .disabled(nameIsValid || atLeastOneIsAvailable)
             }
-            Text("Natürlich kannst du deinen Piloten später anpassen und weitere Piloten anlegen.")
+            Text("Natürlich kannst du auch deine Flugobjekte später noch anpassen.")
             Spacer()
             VStack(spacing: -4.0) {
                 OnboardingStateView(state: $state)
                 HStack(spacing: 0.0) {
                     Spacer()
                     NavigationLink(destination: {
-                        FlyingObjectView(state: $state)
+                        LocationView(state: $state)
                     }, label: {
                         Image(systemName: "arrow.forward.circle")
                             .resizable()
@@ -50,19 +50,18 @@ struct PilotView: View {
             }
         }
         .padding()
-        .navigationTitle("Dein Pilot")
+        .navigationTitle("Dein Fluggerät")
         .navigationBarTitleDisplayMode(.inline)
     }
 
     private func add() {
-        let pilot = Pilot(context: viewContext)
-        pilot.id = UUID()
-        pilot.isDefault = true
-        pilot.name = name
+        let flyingObject = FlyingObject(context: viewContext)
+        flyingObject.id = UUID()
+        flyingObject.name = name
 
         do {
             try viewContext.save()
-            state.updateTo(atLeast: .pilot)
+            state.updateTo(atLeast: .flyingObject)
         } catch {
             // TODO: Add error handling
         }
@@ -73,12 +72,12 @@ struct PilotView: View {
     }
 
     private var atLeastOneIsAvailable: Bool {
-        pilots.count > 0
+        flyingObjects.count > 0
     }
 }
 
-struct PilotView_Previews: PreviewProvider {
+struct FlyingObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        PilotView(state: .constant(.intro))
+        FlyingObjectView(state: .constant(.pilot))
     }
 }

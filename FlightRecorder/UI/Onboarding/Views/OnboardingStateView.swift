@@ -29,6 +29,6 @@ struct OnboardingStateView: View {
 
 struct OnboardingStateView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingStateView(state: .constant(.flightObject))
+        OnboardingStateView(state: .constant(.flyingObject))
     }
 }

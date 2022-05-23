@@ -4,7 +4,7 @@ enum OnboardingState: Int {
     case initial      // = Start of app
     case intro        // = Introduction confirmed
     case pilot        // = Pilot added
-    case flightObject // = Flight object added
+    case flyingObject // = Flighing object added
     case location     // = Location access granted (optional)
     case checklist    // = Checklist confirmed
 
@@ -16,7 +16,7 @@ enum OnboardingState: Int {
             return "Einleitung gelesen"
         case .pilot:
             return "Ersten Piloten angelegt"
-        case .flightObject:
+        case .flyingObject:
             return "Erstes Fluggerät angelegt"
         case .location:
             return "Standort freigegeben"

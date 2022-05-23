@@ -1,16 +1,32 @@
+import CoreLocation
 import SwiftUI
 
-struct IntroView: View {
+struct LocationView: View {
     @Binding var state: OnboardingState
 
     var body: some View {
         VStack(alignment: .leading, spacing: 32.0) {
-            Text("Hallo, Flieger!")
+            Text("Wo fliegst du?")
                 .font(.title)
-            Text("Dies ist dein persönliches **Flugbuch**.\n\nErfasse alle deine Drohnenflüge in dieser App und sei für alle behördlichen Auflagen bestens gerüstet.\n\nIn den nächsten fünf Schritten werde ich dich durch die Ersteinrichtung der App führen.")
+            Text("Nun benötigt diese App Zugriff auf deinen Standort. Dies ist nicht erforderlich, erleichtert aber das Erfassen deiner Flüge.")
                 .font(.body)
+            HStack {
+                Spacer()
+                Button(action: {
+                    // TODO: Add location request
+                }, label: {
+                    Label {
+                        Text("Standort freigeben")
+                    } icon: {
+                        Image(systemName: "location.circle")
+                    }
+                })
+                .padding(EdgeInsets.init(top: 8.0, leading: 16.0, bottom: 8.0, trailing: 16.0))
+                .overlay(RoundedRectangle(cornerRadius: 28.0).stroke(Color.accentColor, lineWidth: 1))
+                Spacer()
+            }
             Spacer()
-            VStack(spacing: -4.0) {
+            VStack(spacing: -8.0) {
                 OnboardingStateView(state: $state)
                 HStack(spacing: 0.0) {
                     Spacer()
@@ -33,13 +49,13 @@ struct IntroView: View {
             }
         }
         .padding()
-        .navigationTitle("Einleitung")
+        .navigationTitle("Dein Standort")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-struct IntroView_Previews: PreviewProvider {
+struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroView(state: .constant(.initial))
+        LocationView(state: .constant(.flyingObject))
     }
 }
